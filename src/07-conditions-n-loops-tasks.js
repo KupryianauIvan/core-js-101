@@ -340,29 +340,28 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
-  // const stack = [];
-  // for (const char of str) {
-  //   if (char === '(' || char === '{' || char === '[' || char === '<') {
-  //     stack.push(char);
-  //   } else {
-  //     const popValue = stack.pop();
-  //     if (char === ')' && popValue !== '(') {
-  //       return false;
-  //     }
-  //     if (char === '}' && popValue !== '{') {
-  //       return false;
-  //     }
-  //     if (char === ']' && popValue !== '[') {
-  //       return false;
-  //     }
-  //     if (char === '>' && popValue !== '<') {
-  //       return false;
-  //     }
-  //   }
-  // }
-  // return stack.length === 0;
-  throw new Error('Not implemented');
+function isBracketsBalanced(str) {
+  const stack = [];
+  for (const char of str) {
+    if (char === '(' || char === '{' || char === '[' || char === '<') {
+      stack.push(char);
+    } else {
+      const popValue = stack.pop();
+      if (char === ')' && popValue !== '(') {
+        return false;
+      }
+      if (char === '}' && popValue !== '{') {
+        return false;
+      }
+      if (char === ']' && popValue !== '[') {
+        return false;
+      }
+      if (char === '>' && popValue !== '<') {
+        return false;
+      }
+    }
+  }
+  return stack.length === 0;
 }
 
 
