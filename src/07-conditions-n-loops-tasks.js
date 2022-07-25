@@ -404,9 +404,9 @@ function toNaryString(num, n) {
  *   ['/web/favicon.ico', '/web-scripts/dump', '/verbalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(pathes) {
-  const dirs = pathes.map((path) => path.split('/'));
-  const index = dirs[0].findIndex((x, i) => dirs.some((dir) => x !== dir[i]));
-  return index === 0 ? '' : `${dirs[0].slice(0, index).join('/')}/`;
+  const directories = pathes.map((path) => path.split('/'));
+  const index = directories[0].findIndex((x, i) => directories.some((dir) => x !== dir[i]));
+  return index === 0 ? '' : `${directories[0].slice(0, index).join('/')}/`;
 }
 
 
