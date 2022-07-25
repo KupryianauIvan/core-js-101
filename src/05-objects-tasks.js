@@ -54,8 +54,8 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
-  const obj = JSON.parse(json);
-  const value = Object.values(obj);
+  const object = JSON.parse(json);
+  const value = Object.values(object);
   return new proto.constructor(...value);
 }
 
